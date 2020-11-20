@@ -1,6 +1,6 @@
 # Regularized_S-map_Python
 
-We develop this python script using the Scikit-learn’s ElasticNetCV function. The regularized S-map is used to analyze the varying bacterial interaction in community.
+We develop this python script using the Scikit-learn’s ElasticNetCV function. The regularized S-map is used to analyze the varying bacterial interaction in community. Please cite Yu, Z., Gan, Z., Huang, H., Zhu, Y. & Meng, F. Regularized S-Map Reveals Varying Bacterial Interactions. Appl. Environ. Microbiol. 86, e01615-01620, doi:10.1128/aem.01615-20 (2020) if this method is useful for your research.
 
 Detailed info about the regularized S-map can be found in the previous studies.
 
