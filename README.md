@@ -14,12 +14,18 @@ How to prepare the input time-series data?
 
 Please refer to the csv files in the Input folder. Three demo files are provided. In each input file, the columns represent OTU numbers, the rows represent time points, and the values represent the relative abundance of an OTU at a time point.
 
-How to create the Jacobian matrix? How to evulate the Jacobian matrix inference?
+How to create the Jacobian matrix? 
 
-After preparing your input time-series data, enter the Function folder and change the input directory in the Regularized_S-map.py (Line 88) accordingly.
+(Old version) After preparing your input time-series data, enter the Function folder and change the input directory in the Regularized_S-map.py (Line 88) accordingly.
 Then run 
 
-python Regularized_S-map.py
+python Regularized_S-map.py 
+
+(New version) After preparing your input time-series data, run
+
+python
+
+How to evulate the Jacobian matrix inference?
 
 The Jacobian matrices and quality data will be generated in the Output folder.In the Output folder, there are two subfolder named coef and fit_result, respectively. The coef folder contains the Jacobian matrices and the fit_result folder contains the quality data. In order to evaluate the inference quality, run the Inference_quality_control.R in Function folder.
 
