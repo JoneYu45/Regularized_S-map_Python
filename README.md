@@ -23,7 +23,7 @@ python Regularized_S-map.py
 
 (New version) After preparing your input time-series data, run
 
-python Regularized_S-map_new.py -I ../Input/ -O ../Output/0
+python Regularized_S-map_new.py -I ../Input/intersect_OTU_0.csv -O ../Output/0
 
 How to evulate the Jacobian matrix inference?
 
