@@ -23,7 +23,7 @@ python Regularized_S-map.py
 
 The Jacobian matrices and quality data will be generated in the Output folder.In the Output folder, there are two subfolder named coef and fit_result, respectively. The coef folder contains the Jacobian matrices and the fit_result folder contains the quality data. In order to evaluate the inference quality, run the Inference_quality_control.R in Function folder.
 
-The Jacobian element file is named like 0_0.1_coefs.csv, where the first digital number (0) repressnts the target OTU and the second digital number (0.1) represents the theta used for inference. This csv table provide the info about the effect of other OTUs (column) on target OTU at each time point (row).
+The Jacobian element file is named like 0_0.1_coefs.csv, where the first digital number (0) repressnts the target OTU and the second digital number (0.1) represents the theta used for inference. This csv table provides the info about the effects of other OTUs (column) on target OTU at each time point (row).
 
 # References
 
