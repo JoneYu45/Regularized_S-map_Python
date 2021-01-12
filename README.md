@@ -12,7 +12,7 @@ Python==3.6.5
 
 How to prepare the input time-series data?
 
-Please refer to the csv files in the directory "input". Three demo files are provided. In each input file, the columns represent the OTU numbers, the rows represent the time points, and the values in the table represent the relative abundance of an OTU at a time point.
+Please refer to the csv files in the Input folder. Three demo files are provided. In each input file, the columns represent OTU numbers, the rows represent time points, and the values represent the relative abundance of an OTU at a time point.
 
 How to create the Jacobian matrix? How to evulate the Jacobian matrix inference?
 
