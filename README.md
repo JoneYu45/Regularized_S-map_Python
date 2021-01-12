@@ -4,6 +4,23 @@ We develop this python script using the Scikit-learn’s ElasticNetCV function. 
 
 Detailed info about the regularized S-map can be found in the previous studies.
 
+# Requirement
+
+Python==3.6.5
+
+# Instruction
+
+How to prepare the input time-series data?
+Please refer to the csv files in the directory "input". Three demo files are provided. In each input file, the columns represent the OTU numbers, the rows represent the time points, and the values in the table represent the relative abundance of an OTU at a time point.
+
+How to create the Jacobian matrix? How to evulate the Jacobian matrix inference?
+After preparing your input time-series data, enter the Function folder and change the input directory in the Regularized_S-map.py (Line 88) accordingly.
+Then run python Regularized_S-map.py. The Jacobian matrices and quality data will be generated in the Output folder.
+
+In the Output folder, there are two subfolder named coef and fit_result, respectively. The coef folder contains the Jacobian matrices and the fit_result folder contains the quality data.
+
+
+
 
 # References
 
