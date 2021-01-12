@@ -21,9 +21,7 @@ Then run
 
 python Regularized_S-map.py
 
-The Jacobian matrices and quality data will be generated in the Output folder.
-
-In the Output folder, there are two subfolder named coef and fit_result, respectively. The coef folder contains the Jacobian matrices and the fit_result folder contains the quality data.
+The Jacobian matrices and quality data will be generated in the Output folder.In the Output folder, there are two subfolder named coef and fit_result, respectively. The coef folder contains the Jacobian matrices and the fit_result folder contains the quality data. In order to evaluate the inference quality, run the Inference_quality_control.R.
 
 # References
 
