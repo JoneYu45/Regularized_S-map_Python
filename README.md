@@ -31,7 +31,7 @@ Then run
 
 The Jacobian matrices and quality data will be generated in the Output folder.In the Output folder, there are two subfolder named coef and fit_result, respectively. The coef folder contains the Jacobian matrices and the fit_result folder contains the quality data. In order to evaluate the inference quality, run the Inference_quality_control.R in Function folder.
 
-You can change the input path (line 5) and directory (6) in the Inference_quality_control.R if you save your results or name your data differently.
+You can change the input path (line 5) and directory (i.e. sample ID; line 6) in the Inference_quality_control.R if you save your results or name your data differently.
 
 Two plots (RMSE and RMSE/STD boxplots) will be generated for each sample and can help you to determine the best theta to use. Commonly speaking,  the smaller RMSE the better quality and the RMSE/STD of a good inference should be lower than 1.
 
