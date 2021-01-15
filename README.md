@@ -6,13 +6,13 @@ Detailed info about the regularized S-map can be found in the previous studies.
 
 # Requirement
 
-Linux version 5.4.0-45-generic (buildd@lcy01-amd64-014) (gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)) #49~18.04.2-Ubuntu SMP Wed Aug 26 16:29:02 UTC 2020
+Linux version 5.4.0-45-generic (buildd@lcy01-amd64-014) (gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1 18.04)) #49~18.04.2-Ubuntu SMP Wed Aug 26 16:29:02 UTC 2020
 
 Python==3.6.5
 
 # Instruction
 
-**How to prepare the input time-series data? **
+**How to prepare the input time-series data?**
 
 Please refer to the csv files in the Input folder. Three demo files are provided. In each input file, the columns represent OTU numbers, the rows represent time points, and the values represent the relative abundance of an OTU at a time point.
 
