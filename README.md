@@ -21,11 +21,11 @@ Please refer to the csv files in the Input folder. Three demo files are provided
 (Old version) After preparing your input time-series data, enter the Function folder and change the input directory in the Regularized_S-map.py (Line 88) accordingly.
 Then run 
 
-***python Regularized_S-map.py ***
+***python Regularized_S-map.py***
 
 (New version) After preparing your input time-series data, run
 
-***python Regularized_S-map_new.py -I ../Input/intersect_OTU_0.csv -O ../Output/0 ***
+***python Regularized_S-map_new.py -I ../Input/intersect_OTU_0.csv -O ../Output/0***
 
 **How to evulate the Jacobian matrix inference?**
 
