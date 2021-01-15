@@ -33,7 +33,7 @@ The Jacobian matrices and quality data will be generated in the Output folder.In
 
 You can change the input path (line 5) and directory (6) in the Inference_quality_control.R if you save your results or name your data differently.
 
-Two plots (RMSE and RMSE/STD boxplot) will be generated for each sample and can help you to determine the best theta to use. Commonly speaking,  the smaller RMSE the better quality and the RMSE/STD of a good inference should be lower than 1.
+Two plots (RMSE and RMSE/STD boxplots) will be generated for each sample and can help you to determine the best theta to use. Commonly speaking,  the smaller RMSE the better quality and the RMSE/STD of a good inference should be lower than 1.
 
 The Jacobian element file is named like 0_0.1_coefs.csv, where the first digital number (0) repressnts the target OTU and the second digital number (0.1) represents the theta used for inference. This csv table provides the info about the effects of other OTUs (column) on target OTU at each time point (row).
 
