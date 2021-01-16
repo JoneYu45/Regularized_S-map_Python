@@ -49,8 +49,13 @@ def Regularized_Smap(abund, target_otu, theta, l_grid, iteration, cv, train_len,
     # Make input for the elastic_net
     block = np.append(abund[1:, target_otu], abund[0:-1, ], axis=1)
     ##Delete the uncontinuous states
+    ##Commonly, we inferer the Jacobian matrices using the continuous time series. However, if you don't have enough time points but have the replicate time series from independet reactors.
+    ##You can combine the replicate OTU tables as the input but delete uncontinuous states in the block.
     if uncontinuous == True:
-        block = np.delete(block, [abund.shape[0] / 3 - 1, abund.shape[0] / 3 * 2 - 1], axis=0)
+        block = np.delete(block, [abund.shape[0] / 3 - 1, abund.shape[0] / 3 * 2 - 1], axis=0) 
+        ##Triplicate time series are used as example, so we remove two uncontiunous states in the block. 
+        ##You can also specify the list of uncontiunous states in the block using the following line.
+        # block = np.delete(block, [uncontiunous states], axis=0)
     ##Scaling the input
     ##Each time series is normalized to have a mean of 0 and standard deviation of 1 before analysis with S-maps
     block = (block - np.average(block, axis=0)) / np.std(block, axis=0)
