@@ -16,18 +16,15 @@ Python==3.6.5
 
 Please refer to the csv files in the Input folder. Three demo files are provided. In each input file, the columns represent OTU numbers, the rows represent time points, and the values represent the relative abundance of an OTU at a time point.
 
-Commonly, we inferer the Jacobian matrices using the continuous time series. However, if you don't have enough time points but have the replicate time series from independet reactors.You can combine the replicate OTU tables as the input, but you should specify the uncontinuous states in the input in line 55 of Regularized_S-map_new.py.
+Commonly, we inferer the Jacobian matrices using the continuous time series. However, if you don't have enough time points but have the replicate time series from independet reactors.You can combine the replicate OTU tables as the input. However, you should change the uncontinuous in line 127 and specify the uncontinuous states list in the input in line 58 of Regularized_S-map_new.py.
 
 **How to create the Jacobian matrix?**
 
-(Old version) After preparing your input time-series data, enter the Function folder and change the input directory in the Regularized_S-map.py (Line 88) accordingly.
-Then run 
-
-***python Regularized_S-map.py***
-
-(New version) After preparing your input time-series data, run
+After preparing your input time-series data, run
 
 ***python Regularized_S-map_new.py -I ../Input/intersect_OTU_0.csv -O ../Output/0***
+
+The Regularized_S-map_new.py is more user-friendly than the Regularized_S-map.py. Just ignore the Regularized_S-map.py file.
 
 **How to evulate the Jacobian matrix inference?**
 
