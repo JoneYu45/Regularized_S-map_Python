@@ -16,7 +16,7 @@ Python==3.6.5
 
 Please refer to the csv files in the Input folder. Three demo files are provided. In each input file, the columns represent OTU numbers, the rows represent time points, and the values represent the relative abundance of an OTU at a time point.
 
-Commonly, we inferer the Jacobian matrices using the continuous time series. However, if you don't have enough time points but have the replicate time series from independet reactors.You can combine the replicate OTU tables as the input. However, you should change the uncontinuous in line 126 and specify the uncontinuous states list in the input in line 58 of Regularized_S-map_new.py in the meantime.
+Commonly, we inferer the Jacobian matrices using the continuous time series. However, if you don't have enough time points but have the replicate time series from independet reactors.You can combine the replicate OTU tables as the input. However, you should change the uncontinuous in line 127 and specify the uncontinuous states list in the input in line 58 of Regularized_S-map_new.py in the meantime.
 
 ## How to create the Jacobian matrix?
 
@@ -38,21 +38,21 @@ The Jacobian element file is named like 0_0.1_coefs.csv, where the first digital
 
 ## What are the good values for some parameters used in the inference?
 
-Several parameters are used for the inference, including the l_grid, iteration, CV, trian_len, dominate_threshold, zero_frequency_threshold, and theta.
+Several parameters are used for the inference, including the l_grid, iteration, CV, test_len, dominate_threshold, zero_frequency_threshold, and theta.
 
-**l_grid** (line 122):
+**l_grid** (line 123): This represents the lambda λ gradient. It controls the penalty in elastic net regression.
 
-**iteration** (line 123):
+**iteration** (line 124): This represents the iteration times for the elastic net regression.
 
-**CV** (line 124):
+**CV** (line 125): This repressnts the K-fold cross validation. Commonly, 10 fold cross validation is used.
 
-**trian_len** (line 125):
+**test_len** (line 126): This represents the number of test set. We only randomly picked 5 observations as the test set. You can use as many as you want, but make sure enough observations are used for the training.
 
-**dominate_threshold** (line 127):
+**dominate_threshold** (line 128): OTUs whose abundances are more than this threshold will be included in the inference. This parameter will be used when the select in line 130 equals True.
 
-**zero_frequency_threshold** (line 128):
+**zero_frequency_threshold** (line 129): OTUs whose absence frequency are less than this threshold will be included in the inference. This parameter will be used when the select in line 130 equals True.
 
-**theta** (line 151):
+**theta** (line 152): The theta list used for the inference. You can specify the thetas (θ) list you want to try. Only the states closer to the target state will be used for regression when θ is large. Try different theta and find out how it affect the inference quality.
 
 # References
 
