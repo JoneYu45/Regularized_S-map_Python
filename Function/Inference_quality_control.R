@@ -90,6 +90,7 @@ for (m in 1:length(sub_path)) {
 
     colnames(collected_coefs) <- colnames(best_coefs)
     collected_coefs <- rbind(collected_coefs, best_coefs[as.numeric(best_theta[i,3])+1,])
+    row.names(collected_coefs)[i+1] <- paste(best_theta[i,1], as.numeric(best_theta[i,3])+1, sep = '-')
   }
   collected_coefs <- collected_coefs[-1,]
 
