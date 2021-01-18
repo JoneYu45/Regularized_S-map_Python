@@ -44,7 +44,7 @@ def select_frequent_dominate_genera(input, dominate_threshold, zero_frequency_th
     #Output selection
     return wanted_abundance
 
-def Regularized_Smap(abund, target_otu, theta, l_grid, iteration, cv, train_len, uncontinuous):
+def Regularized_Smap(abund, target_otu, theta, l_grid, iteration, cv, test_len, uncontinuous):
     print('Process data for otu No. %s' % str(target_otu+1))
     # Make input for the elastic_net
     block = np.append(abund[1:, target_otu], abund[0:-1, ], axis=1)
@@ -81,7 +81,7 @@ def Regularized_Smap(abund, target_otu, theta, l_grid, iteration, cv, train_len,
         Y_target = block[ipred, 0]
 
         ##Split training and test data
-        pick_test = np.random.choice(range(X_wp.shape[0]), size=train_len, replace=False)
+        pick_test = np.random.choice(range(X_wp.shape[0]), size=test_len, replace=False)
         X_train = np.append(np.delete(X_wp, pick_test, axis=0), X_target, axis=0)
         X_test = X_wp[pick_test, :]
         Y_train = np.append(np.delete(Y_wp, pick_test, axis=0), Y_target)
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     parse.add_option('-I', '--input', dest='input', default='../inputs/month_sample.csv')
     parse.add_option('-O', '--output', dest='output', default='../outputs')
     parse.add_option('-C', '--CV', dest='CV', default=10)
-    parse.add_option('-T', '--train-length', dest='tl', default=5)
+    parse.add_option('-T', '--test-length', dest='tl', default=5)
 
     (options, args) = parse.parse_args()
     input = options.input
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     l_grid = 0.01
     iteration = 1000000
     cv = options.CV
-    train_len = int(options.tl)
+    test_len = int(options.tl)
     uncontinuous = False
     dominate_threshold = 1  # OTUs whose abundances are more than the threshold will be included in the inference.
     zero_frequency_threshold = 20  # OTUs whose absence frequency are less than threshold will be included in the inference.
@@ -148,6 +148,6 @@ if __name__ == '__main__':
     num_cores = multiprocessing.cpu_count()
     for target_otu in range(abund.shape[1]):
         Parallel(n_jobs=num_cores, backend='multiprocessing')(
-            delayed(Regularized_Smap)(abund, target_otu, theta, l_grid, iteration, cv, train_len, output_dir) for theta in
+            delayed(Regularized_Smap)(abund, target_otu, theta, l_grid, iteration, cv, test_len, output_dir) for theta in
             [0.1, 0.5, 1, 2, 5, 10]) #You can specify the thetas (θ) list you want to try. Only the states closer to the target state will be used for regression when θ is large.
     print('\nFinished!')
