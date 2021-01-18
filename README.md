@@ -40,7 +40,7 @@ The Jacobian element file is named like 0_0.1_coefs.csv, where the first digital
 
 After the inference quality control, a csv table named XX_best_coefs.csv will be generated. This table can provided the best inference of the effects of other OTUs (column) on target OTU at each time point (row). The row names looks like 0-1, where the first digital number represents the target OTUs, and the second digital number represents the time point.
 
-You can use this Jacobian element to calculate the volume contraction rate  andharmony level according to the Cenci S et al. and Zhong Y et al. (See references for further info).
+You can use these Jacobian elements to calculate the volume contraction rate  andharmony level according to the Cenci S et al. and Zhong Y et al. (See references for further info).
 
 ## What are the good values for some parameters used in the inference?
 
