@@ -16,7 +16,7 @@ Python==3.6.5
 
 Please refer to the csv files in the Input folder. Three demo files are provided. In each input file, the columns represent OTU numbers, the rows represent time points, and the values represent the relative abundance of an OTU at a time point.
 
-Commonly, we inferer the Jacobian matrices using the continuous time series. However, if you don't have enough time points but have the replicate time series from independet reactors.You can combine the replicate OTU tables as the input. However, you should change the uncontinuous in line 127 and specify the uncontinuous states list in the input in line 58 of Regularized_S-map_new.py.
+Commonly, we inferer the Jacobian matrices using the continuous time series. However, if you don't have enough time points but have the replicate time series from independet reactors.You can combine the replicate OTU tables as the input. However, you should change the uncontinuous in line 126 and specify the uncontinuous states list in the input in line 58 of Regularized_S-map_new.py in the meantime.
 
 ## How to create the Jacobian matrix?
 
@@ -38,7 +38,21 @@ The Jacobian element file is named like 0_0.1_coefs.csv, where the first digital
 
 ## What are the good values for some parameters used in the inference?
 
-Several parameters are used for the inference, including the l_grid, iteration, CV, trian_len dominate_threshold, zero_frequency_threshold, and theta.
+Several parameters are used for the inference, including the l_grid, iteration, CV, trian_len, dominate_threshold, zero_frequency_threshold, and theta.
+
+**l_grid** (line 122):
+
+**iteration** (line 123):
+
+**CV** (line 124):
+
+**trian_len** (line 125):
+
+**dominate_threshold** (line 127):
+
+**zero_frequency_threshold** (line 128):
+
+**theta** (line 151):
 
 # References
 
