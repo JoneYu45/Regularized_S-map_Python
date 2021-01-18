@@ -36,6 +36,12 @@ Two plots (RMSE and RMSE/STD boxplots) will be generated for each sample and can
 
 The Jacobian element file is named like 0_0.1_coefs.csv, where the first digital number (0) repressnts the target OTU and the second digital number (0.1) represents the theta used for inference. This csv table provides the info about the effects of other OTUs (column) on target OTU at each time point (row).
 
+## The final Jacobian elements after the quality control?
+
+After the inference quality control, a csv table named XX_best_coefs.csv will be generated. This table can provided the best inference of the effects of other OTUs (column) on target OTU at each time point (row). The row names looks like 0-1, where the first digital number represents the target OTUs, and the second digital number represents the time point.
+
+You can use this Jacobian element to calculate the volume contraction rate  andharmony level according to the Cenci S et al. and Zhong Y et al. (See references for further info).
+
 ## What are the good values for some parameters used in the inference?
 
 Several parameters are used for the inference, including the l_grid, iteration, CV, test_len, dominate_threshold, zero_frequency_threshold, and theta.
