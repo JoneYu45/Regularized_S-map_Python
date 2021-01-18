@@ -53,9 +53,10 @@ def Regularized_Smap(abund, target_otu, theta, l_grid, iteration, cv, train_len,
     ##You can combine the replicate OTU tables as the input but delete uncontinuous states in the block.
     if uncontinuous == True:
         block = np.delete(block, [abund.shape[0] / 3 - 1, abund.shape[0] / 3 * 2 - 1], axis=0) 
-        ##Triplicate time series are used as example, so we remove two uncontiunous states in the block. 
-        ##You can also specify the list of uncontiunous states in the block using the following line.
+        ##Triplicate time series are used as example, so we remove two uncontiunous states, i.e., [abund.shape[0] / 3 - 1, abund.shape[0] / 3 * 2 - 1], in the block. 
+        ##You can also specify the list of uncontiunous states in the block using the following line. Remember to uncomment the the following line and delete line 55.
         # block = np.delete(block, [uncontiunous states], axis=0)
+        ##The [uncontiunous states] can be like [34, 55] or [1, 2, 10] as you need it to be.
     ##Scaling the input
     ##Each time series is normalized to have a mean of 0 and standard deviation of 1 before analysis with S-maps
     block = (block - np.average(block, axis=0)) / np.std(block, axis=0)
