@@ -12,13 +12,13 @@ Python==3.6.5
 
 # Instruction
 
-**How to prepare the input time-series data?**
+## How to prepare the input time-series data?
 
 Please refer to the csv files in the Input folder. Three demo files are provided. In each input file, the columns represent OTU numbers, the rows represent time points, and the values represent the relative abundance of an OTU at a time point.
 
 Commonly, we inferer the Jacobian matrices using the continuous time series. However, if you don't have enough time points but have the replicate time series from independet reactors.You can combine the replicate OTU tables as the input. However, you should change the uncontinuous in line 127 and specify the uncontinuous states list in the input in line 58 of Regularized_S-map_new.py.
 
-**How to create the Jacobian matrix?**
+## How to create the Jacobian matrix?
 
 After preparing your input time-series data, run
 
@@ -26,7 +26,7 @@ After preparing your input time-series data, run
 
 The Regularized_S-map_new.py is more user-friendly than the Regularized_S-map.py. Just ignore the Regularized_S-map.py file.
 
-**How to evulate the Jacobian matrix inference?**
+## How to evulate the Jacobian matrix inference?
 
 The Jacobian matrices and quality data will be generated in the Output folder.In the Output folder, there are two subfolder named coef and fit_result, respectively. The coef folder contains the Jacobian matrices and the fit_result folder contains the quality data. In order to evaluate the inference quality, run the Inference_quality_control.R in Function folder.
 
@@ -35,6 +35,10 @@ You can change the input path (line 5) and directory (i.e. sample ID; line 6) in
 Two plots (RMSE and RMSE/STD boxplots) will be generated for each sample and can help you to determine the best theta to use. Commonly speaking,  the smaller RMSE the better quality and the RMSE/STD of a good inference should be lower than 1.
 
 The Jacobian element file is named like 0_0.1_coefs.csv, where the first digital number (0) repressnts the target OTU and the second digital number (0.1) represents the theta used for inference. This csv table provides the info about the effects of other OTUs (column) on target OTU at each time point (row).
+
+## What are the good values for some parameters used in the inference?
+
+Several parameters are used for the inference, including the l_grid, iteration, CV, trian_len dominate_threshold, zero_frequency_threshold, and theta.
 
 # References
 
