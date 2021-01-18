@@ -52,7 +52,7 @@ Several parameters are used for the inference, including the l_grid, iteration, 
 
 **zero_frequency_threshold** (line 129): OTUs whose absence frequency are less than this threshold will be included in the inference. This parameter will be used when the select in line 130 equals True.
 
-**theta** (line 152): The theta list used for the inference. You can specify the thetas (θ) list you want to try. Only the states closer to the target state will be used for regression when θ is large. Try different theta and find out how it affect the inference quality.
+**theta** (line 152): The theta list used for the inference. You can specify the thetas (θ) list you want to try. Only the states closer to the target state will be used for regression when θ is large. Try different theta and find out how it affects the inference quality.
 
 # References
 
