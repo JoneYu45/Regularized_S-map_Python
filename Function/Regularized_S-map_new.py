@@ -123,11 +123,10 @@ if __name__ == '__main__':
     iteration = 1000000
     cv = options.CV
     train_len = int(options.tl)
-    t_grid = 0.01
     uncontinuous = False
-    dominate_threshold = 1  # More than threshold
-    zero_frequency_threshold = 20  # Less than threshold
-    select = True
+    dominate_threshold = 1  # OTUs whose abundances are more than the threshold will be included in the inference.
+    zero_frequency_threshold = 20  # OTUs whose absence frequency are less than threshold will be included in the inference.
+    select = True # If true, we will select the OTUs consistent with the aforementioned resitriction. Otherwise, all OTUs will be used for the inference.
 
     print('Start!')
     # Make ouput direction
@@ -149,5 +148,5 @@ if __name__ == '__main__':
     for target_otu in range(abund.shape[1]):
         Parallel(n_jobs=num_cores, backend='multiprocessing')(
             delayed(Regularized_Smap)(abund, target_otu, theta, l_grid, iteration, cv, train_len, output_dir) for theta in
-            [0.1, 0.5, 1, 2, 5, 10])
+            [0.1, 0.5, 1, 2, 5, 10]) #You can specify the thetas (θ) list you want to try. Only the states closer to the target state will be used for regression when θ is large.
     print('\nFinished!')
